@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Jadian Yuk !</title>
+  </head>
+  <body>
+    <div class="card bg-love">
+      <img id="thumb" src="gambar1.jpeg" alt="thumb" class="img-thumb" />
+      <h3 class="text-center">HAI SAYANG..SELAMAT ULANG TAHUN YAA..</h3>
+      <h3 class="text-center">MAU HADIAH GAK ?😁😁😁</h3>
+      <div class="card-footer">
+        <div class="btn mau" onclick="mau()">Gak ☹️</div>
+        <div class="btn gak" onclick="gakmau(this)" onmouseover="gakmau(this)">
+          Mau 😍
+        </div>
+      </div>
+      <div class="info text-center mt-16" id="info"></div>
+    </div>
+    <div class="text-center mt-16" id="musicbox">
+      <audio id="music" src="rarultah.mp3" controls></audio>
+    </div>
+  </body>
+  <script>
+    var _info = document.getElementById("info");
+    var _music = document.getElementById("music");
+    function gakmau(element) {
+      element.style.position = "absolute";
+      element.style.left = `${Math.floor(Math.random() * 90)}%`;
+      element.style.top = `${Math.floor(Math.random() * 90)}%`;
+
+      _info.innerHTML = "Kejar Terus Tombol Mau-nya wkwkk";
+    }
+    function mau() {
+      if (_music.paused) _music.play();
+      _info.innerHTML = "Yaudah kasih lagu aja ya hehehe..";
+    }
+  </script>
+</html>
